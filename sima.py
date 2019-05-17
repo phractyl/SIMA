@@ -39,23 +39,23 @@ word_count_dict = {}
 with open(source_filename, encoding='ISO-8859-1') as f:
     for line in f:
         for item in one_big_list:
-            line_split = list(line.strip('\n').split(' ')) #break line into list of words by space and strip linebreak
+            line_split = list(line.strip('\n').split(' ')) 
             if item in line_split:
-                #print(f"found {item} in {line}")  #comment out this line (and this comment) to see line context
+                #print(f"found {item} in {line}")  #uncomment to see line context
                 if item not in word_count_dict.keys():
-                    word_count_dict[item] = line_split.count(item) #count the amount of times it's said if not exist
+                    word_count_dict[item] = line_split.count(item) 
                 else:
-                    word_count_dict[item] = word_count_dict[item] + line_split.count(item) #add to existing if exists
+                    word_count_dict[item] = word_count_dict[item] + line_split.count(item) 
 
-#print(word_count_dict) #uncomment this line to see all tagged words and their counts
+#print(word_count_dict) #uncomment to see all tagged words and their counts
 ideal_output = {}
 for count in word_count_dict:
     for key, value in a_dict.items():
         if count in value:
             if key not in ideal_output:
-                ideal_output[key] = word_count_dict.get(count) #we adjust this to count total's found
+                ideal_output[key] = word_count_dict.get(count) 
             else:
-                ideal_output[key] = ideal_output[key] + word_count_dict.get(count) #instead of how many instances
+                ideal_output[key] = ideal_output[key] + word_count_dict.get(count) 
                 
 for item in ideal_output:
    string_list = [] 
