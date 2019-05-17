@@ -11,7 +11,6 @@ def percentage(part, whole):
 #list all the tuples into a big fat list for one iteration
 one_big_list = list(item for items in a_dict.values() for item in items)
 
-
 #build GUI for text file selection
 import PySimpleGUI as sg      
 window_rows = [[sg.Text('Please select a .txt file for analysis')],      
